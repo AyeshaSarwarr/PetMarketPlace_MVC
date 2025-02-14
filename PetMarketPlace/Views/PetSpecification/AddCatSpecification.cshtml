@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Add Cat Specification";
+    Layout = "_Layout";
+}
+@section Scripts {
+    <script src="site.js"></script>
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+
+    <form id="addCatForm" asp-action="AddCatSpecification" method="post" enctype="multipart/form-data" class="mt-4">
+        <div class="form-group">
+            <label for="catType">Cat Type</label>
+            <input type="text" class="form-control" id="catType" name="CatType" placeholder="Enter cat type (e.g., Siamese, Persian)" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="catAge">Cat Age (in years)</label>
+            <input type="number" class="form-control" id="catAge" name="CatAge" placeholder="Enter cat age" min="0" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="catColor">Cat Color</label>
+            <input type="text" class="form-control" id="catColor" name="CatColor" placeholder="Enter cat color (e.g., White, Black)" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="catPrice">Price</label>
+            <input type="number" class="form-control" id="catPrice" name="CatPrice" placeholder="Enter price" min="0" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="catPicture">Cat Picture</label>
+            <input type="file" class="form-control-file" id="catPicture" name="CatPicture" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-info mt-4" role="alert">
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+</div>

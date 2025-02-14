@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Select Options";
+    Layout = "_Layout";
+}
+@section Scripts {
+    <script src="site.js"></script>
+}
+<div class="container mt-5">
+    <h1 class="text-center mb-5 display-4">What would you like to do?</h1>
+
+    <form id="select-options-container" asp-action="SelectOptions" method="post">
+        <div class="d-flex justify-content-center">
+            <button type="submit" name="actionn" value="StartSelling" class="btn btn-primary mx-3">Start Selling</button>
+            <button type="submit" name="actionn" value="ViewMyPets" class="btn btn-secondary mx-3">View My Pets</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+</style>

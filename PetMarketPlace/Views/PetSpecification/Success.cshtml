@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Upload Success";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card p-4">
+            <div class="alert alert-success text-center" role="alert">
+                <h4 class="alert-heading">Success!</h4>
+                <p>Your pet has been uploaded successfully.</p>
+                <hr>
+            </div>
+            <div class="text-center mt-3">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Go to Home</a>
+                <a href="@Url.Action("MyPets", "AllPets")" class="btn btn-primary">My Pets</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+@{
+    Layout = "_Layout";
+}
+
+    <div class="container mt-5">
+        <h2>@ViewData["Title"]</h2>
+        <div class="alert alert-info" role="alert">
+            @ViewData["Message"]
+        </div>
+        <a href="@Url.Action("Login", "Buyer")" class="btn btn-primary">Login</a>
+        <a href="@Url.Action("Signup", "Buyer")" class="btn btn-secondary">Sign Up</a>
+    </div>

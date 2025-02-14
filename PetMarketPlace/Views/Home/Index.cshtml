@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PetPalace</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+
+        body {
+            background-image: url('/background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .custom-container {
+            padding-top: 50px;
+        }
+
+        .hero-section {
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 60px 0; 
+            border-radius: 15px; 
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary-custom {
+            background-color: #007bff; 
+            border: none;
+        }
+
+        .btn-success-custom {
+            background-color: #28a745; 
+            border: none;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container custom-container">
+        <main role="main" class="pb-3">
+            <div class="hero-section text-center">
+                <h1 class="display-4">Welcome To Pet Palace</h1>
+                <p class="lead">Your one-stop shop for all things pets!</p>
+                <div class="mt-4">
+                    <h2>Proceed as:</h2>
+                    <form method="post">
+                        <button type="submit" name="Role" value="Buyer" class="btn btn-primary btn-lg btn-custom btn-primary-custom mr-3">Buyer</button>
+                        <button type="submit" name="Role" value="Seller" class="btn btn-success btn-lg btn-custom btn-success-custom">Seller</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

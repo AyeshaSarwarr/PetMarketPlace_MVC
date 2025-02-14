@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5 text-danger">Confirm Deletion</h1>
+
+    <div class="card mx-auto shadow-sm" style="max-width: 500px;">
+        <img src="@Model.PetPicturePath" class="card-img-top img-fluid img-fit rounded" alt="Pet Picture">
+        <div class="card-body text-center">
+            <p class="card-text">Are you sure you want to delete this pet?</p>
+            <p class="card-text text-warning">This action cannot be undone.</p>
+        </div>
+        <div class="card-footer text-center bg-transparent">
+            <form asp-action="ConfirmDelete" method="post" class="d-inline">
+                <input type="hidden" name="PetId" value="@Model.PetId" />
+                <button type="submit" name="action" value="Confirm" class="btn btn-danger mx-2">Confirm</button>
+                <button type="submit" name="action" value="Cancel" class="btn btn-secondary mx-2">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .img-fit {
+        object-fit: contain;
+        height: 250px;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .btn-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d;
+        color: white;
+    }
+</style>

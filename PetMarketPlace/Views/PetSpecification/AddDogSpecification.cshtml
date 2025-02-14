@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Add Dog Specification";
+    Layout = "_Layout";
+}
+@section Scripts {
+    <script src="site.js"></script>
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+
+    <form id="addDogForm" asp-action="AddDogSpecification" method="post" enctype="multipart/form-data" class="mt-4">
+        <div class="form-group">
+            <label for="dogBreed">Dog Breed</label>
+            <input type="text" class="form-control" id="dogBreed" name="DogBreed" placeholder="Enter dog breed (e.g., Labrador, Poodle)" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="dogAge">Dog Age (in years)</label>
+            <input type="number" class="form-control" id="dogAge" name="DogAge" placeholder="Enter dog age" min="0" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="dogColor">Dog Color</label>
+            <input type="text" class="form-control" id="dogColor" name="DogColor" placeholder="Enter dog color (e.g., Brown, Black)" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="dogPrice">Price</label>
+            <input type="number" class="form-control" id="dogPrice" name="DogPrice" placeholder="Enter price" min="0" required />
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="dogPicture">Dog Picture</label>
+            <input type="file" class="form-control-file" id="dogPicture" name="DogPicture" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <div class="alert alert-info mt-4" role="alert">
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+</div>
+<script src="~/js/signalr/signalr.js"></script>
+<script src="~/js/notification.js"></script>

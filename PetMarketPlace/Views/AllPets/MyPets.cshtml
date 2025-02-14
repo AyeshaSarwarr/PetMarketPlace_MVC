@@ -1,0 +1,96 @@
+﻿@model WebProject.Models.Entities.AllPetsEntity
+@{
+    Layout = "_Layout";
+}
+<div class="container mt-5">
+    <h1 class="text-center mb-5 display-4">My Pets</h1>
+
+    <h2 class="mb-4 text-primary">Dogs</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var dog in Model.Dogs)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="@dog.DogPicturePath" class="card-img-top img-fluid img-fit rounded" alt="Dog Picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@dog.DogBreed</h5>
+                        <p class="card-text">Age: @dog.DogAge</p>
+                        <p class="card-text">Color: @dog.DogColor</p>
+                        <p class="card-text font-weight-bold text-success">Price: $@dog.DogPrice</p>
+                    </div>
+                    <div class="card-footer text-center bg-transparent">
+                        <form method="post" action="@Url.Action("MyPets", "AllPets")" class="d-inline">
+                            <input type="hidden" name="PetId" value="@dog.DogId" />
+                            <input type="hidden" name="Section" value="Dog" />
+                            <button type="submit" name="actionn" value="Update" class="btn btn-outline-primary mx-2">Update</button>
+                            <button type="submit" name="actionn" value="Delete" class="btn btn-outline-secondary mx-2">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <h2 class="mt-5 mb-4 text-primary">Cats</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var cat in Model.Cats)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="@cat.CatPicturePath" class="card-img-top img-fluid img-fit rounded" alt="Cat Picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@cat.CatType</h5>
+                        <p class="card-text">Age: @cat.CatAge</p>
+                        <p class="card-text">Color: @cat.CatColor</p>
+                        <p class="card-text font-weight-bold text-success">Price: $@cat.CatPrice</p>
+                    </div>
+                    <div class="card-footer text-center bg-transparent">
+                        <form method="post" action="@Url.Action("MyPets", "AllPets")" class="d-inline">
+                            <input type="hidden" name="PetId" value="@cat.CatId" />
+                            <input type="hidden" name="Section" value="Cat" />
+                            <button type="submit" name="actionn" value="Update" class="btn btn-outline-primary mx-2">Update</button>
+                            <button type="submit" name="actionn" value="Delete" class="btn btn-outline-secondary mx-2">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .img-fit {
+        object-fit: contain;
+        height: 250px;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: white;
+    }
+</style>
